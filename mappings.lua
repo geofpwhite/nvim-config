@@ -5,6 +5,9 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
+  i = {
+    ["kj"] = { "<Esc>" },
+  },
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
@@ -12,7 +15,7 @@ return {
     ["H"] = { ":bp<cr>" },
     ["L"] = { ":bn<cr>" },
     ["f"] = { "<cmd>HopWordMW<cr>" },
-    ["gr"]={"<cmd>lua vim.lsp.buf.references()<cr>"},
+    ["gr"] = { "<cmd>lua vim.lsp.buf.references()<cr>" },
     ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr>" },
     ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
