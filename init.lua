@@ -96,8 +96,11 @@ return {
     vim.keymap.set("n", "<leader>\\", ":split | Telescope buffers<cr>")
     vim.keymap.set("n", "<leader>|", ":vsplit|Telescope buffers<cr>")
     vim.keymap.set("n", "gR", ":lua vim.lsp.buf.references()<cr>")
+    vim.keymap.set("n", "<leader>j", ":ToggleTerm direction=horizontal<cr>")
+    vim.keymap.set("n", "<Tab>", ">>")
     vim.cmd ":nmap s ysiw"
-    vim.cmd ":nmap s S"
+    vim.cmd ":vmap s S"
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
