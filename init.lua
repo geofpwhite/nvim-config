@@ -30,16 +30,16 @@ return {
     end,
   },
   updater = {
-    remote = "origin", -- remote to use
-    channel = "stable", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "nightly", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
+    remote = "origin",     -- remote to use
+    channel = "stable",    -- "stable" or "nightly"
+    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "nightly",    -- branch name (NIGHTLY ONLY)
+    commit = nil,          -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false,  -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_quit = false, -- automatically quit the current session after a successful update
-    remotes = { -- easily add new remotes to track
+    auto_quit = false,     -- automatically quit the current session after a successful update
+    remotes = {            -- easily add new remotes to track
       --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
       --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
@@ -57,7 +57,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -76,7 +76,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       "pyright",
-      "jdtls"
+      "jdtls",
     },
   },
   -- Configure require("lazy").setup() options
@@ -95,7 +95,7 @@ return {
   polish = function()
     vim.keymap.set("n", "<leader>\\", ":split | Telescope buffers<cr>")
     vim.keymap.set("n", "<leader>|", ":vsplit|Telescope buffers<cr>")
-    vim.keymap.set("n","gr",":lua vim.lsp.buf.references()<cr>")
+    vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>")
     vim.cmd ":nmap s ysiw"
     vim.cmd ":nmap gr :lua vim.lsp.buf.references()<cr>"
     -- Set up custom filetypes
