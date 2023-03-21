@@ -12,7 +12,6 @@ return {
     ["H"] = { ":bp<cr>" },
     ["L"] = { ":bn<cr>" },
     ["f"] = { "<cmd>HopWordMW<cr>" },
-    ["s"] = "ysiw",
     ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr>" },
     ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },

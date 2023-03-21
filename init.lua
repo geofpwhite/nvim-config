@@ -64,7 +64,10 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     vim.keymap.set("n", "s", "ysiw")
+    vim.keymap.set("n", "<leader>\\", ":split | Telescope buffers<cr>")
+    vim.keymap.set("n", "<leader>|", ":vsplit|Telescope buffers<cr>")
     vim.cmd ":nmap s ysiw"
+    -- vim.cmd ":nmap <leader>\\ <cmd>split | Telescope buffers <cr>"
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
