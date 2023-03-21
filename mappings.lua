@@ -13,6 +13,7 @@ return {
     ["L"] = { ":bn<cr>" },
     ["f"] = { "<cmd>HopWordMW<cr>" },
     ["s"] = { "ysiw" },
+    ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bd"] = { "<cmd>" },
     ["<leader>bD"] = {

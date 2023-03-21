@@ -11,9 +11,9 @@ return {
   -- },
 
   { "tpope/vim-unimpaired", lazy = false },
-  { "tpope/vim-surround", lazy = false },
-  { "tpope/vim-repeat", lazy = false },
-  { "github/copilot.vim", lazy = false },
+  { "tpope/vim-surround",   lazy = false },
+  { "tpope/vim-repeat",     lazy = false },
+  { "github/copilot.vim",   lazy = false },
   {
     lazy = false,
     "chentoast/marks.nvim",
@@ -21,7 +21,6 @@ return {
       require("marks").setup {
         default_mappings = true,
         -- which builtin marks to show. default {}
-        builtin_marks = { ".", "<", ">", "^" },
         -- whether movements cycle back to the beginning/end of buffer. default true
         cyclic = true,
         -- whether the shada file is updated after modifying uppercase marks. default false
@@ -44,18 +43,15 @@ return {
         -- default virt_text is "".
         bookmark_0 = {
           sign = "⚑",
-          virt_text = "hello world",
-          -- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
-          -- defaults to false.
           annotate = false,
         },
         mappings = {},
       }
     end,
   },
-  { lazy = false, "phaazon/hop.nvim", config = function() require("hop").setup() end },
+  { lazy = false,        "phaazon/hop.nvim",    config = function() require("hop").setup() end },
   { "zefei/vim-wintabs", lazy = false },
-  { lazy = false, "tiagovla/scope.nvim", config = function() require("scope").setup() end },
+  { lazy = false,        "tiagovla/scope.nvim", config = function() require("scope").setup() end },
   {
     "gorbit99/codewindow.nvim",
     lazy = false,
