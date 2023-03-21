@@ -11,9 +11,9 @@ return {
   -- },
 
   { "tpope/vim-unimpaired", lazy = false },
-  { "tpope/vim-surround",   lazy = false },
-  { "tpope/vim-repeat",     lazy = false },
-  { "github/copilot.vim",   lazy = false },
+  { "tpope/vim-surround", lazy = false },
+  { "tpope/vim-repeat", lazy = false },
+  { "github/copilot.vim", lazy = false },
   {
     lazy = false,
     "chentoast/marks.nvim",
@@ -49,9 +49,9 @@ return {
       }
     end,
   },
-  { lazy = false,        "phaazon/hop.nvim",    config = function() require("hop").setup() end },
+  { lazy = false, "phaazon/hop.nvim", config = function() require("hop").setup() end },
   { "zefei/vim-wintabs", lazy = false },
-  { lazy = false,        "tiagovla/scope.nvim", config = function() require("scope").setup() end },
+  { lazy = false, "tiagovla/scope.nvim", config = function() require("scope").setup() end },
   {
     "gorbit99/codewindow.nvim",
     lazy = false,
@@ -61,4 +61,5 @@ return {
     end,
   },
   { "github/copilot.vim", lazy = false },
+  { lazy = false, "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
 }
