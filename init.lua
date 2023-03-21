@@ -75,7 +75,8 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "pyright",
+      "jdtls"
     },
   },
   -- Configure require("lazy").setup() options
