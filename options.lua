@@ -9,6 +9,7 @@ return {
     wrap = false, -- sets vim.opt.wrap
     foldcolumn = "auto:9",
     autochdir = true,
+    foldnestmax = 3,
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
