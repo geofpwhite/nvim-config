@@ -95,6 +95,7 @@ return {
     vim.keymap.set("n", "<leader>\\", ":split | Telescope buffers<cr>")
     vim.keymap.set("n", "<leader>|", ":vsplit|Telescope buffers<cr>")
     vim.cmd ":nmap s ysiw"
+    vim.cmd ":nmap gr :lua vim.lsp.buf.references()<cr>"
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

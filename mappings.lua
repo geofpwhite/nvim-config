@@ -12,6 +12,7 @@ return {
     ["H"] = { ":bp<cr>" },
     ["L"] = { ":bn<cr>" },
     ["f"] = { "<cmd>HopWordMW<cr>" },
+    ["gr"]={"<cmd>lua vim.lsp.buf.references()<cr>"},
     ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr>" },
     ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
