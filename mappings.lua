@@ -38,6 +38,7 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
+    ["jj"] = { "<C-\\><C-n>:ToggleTerm<cr>" },
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
