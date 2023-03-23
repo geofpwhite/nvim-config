@@ -100,7 +100,7 @@ return {
     vim.cmd ":nmap s ysiw"
     vim.cmd ":vmap s S"
     vim.cmd ":highlight @variable guifg=lightblue"
-    vim.cmd ":highlight @attribute guifg=lightblue[200]"
+    vim.cmd ":highlight @attribute guifg=#56b6c2"
     vim.cmd ":highlight @function guifg=#e5c07b"
     local status = require "astronvim.utils.status"
     require("heirline").setup {
