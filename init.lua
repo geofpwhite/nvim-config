@@ -96,6 +96,7 @@ return {
     vim.keymap.set("n", "<leader>j", ":ToggleTerm direction=horizontal<cr>")
     vim.keymap.set("n", "<Tab>", ">>")
     vim.keymap.set("n", "<S-Tab>", "<<")
+    vim.cmd "hi CodewindowBorder guifg=#1e222a guibg=#1e222a<cr>"
     vim.cmd ":nmap s ysiw"
     vim.cmd ":vmap s S"
     vim.cmd ":highlight @variable guifg=lightblue"

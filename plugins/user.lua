@@ -11,9 +11,9 @@ return {
   -- },
 
   { "tpope/vim-unimpaired", lazy = false },
-  { "tpope/vim-surround",   lazy = false },
-  { "tpope/vim-repeat",     lazy = false },
-  { "github/copilot.vim",   lazy = false },
+  { "tpope/vim-surround", lazy = false },
+  { "tpope/vim-repeat", lazy = false },
+  { "github/copilot.vim", lazy = false },
   {
     lazy = false,
     "chentoast/marks.nvim",
@@ -24,7 +24,7 @@ return {
         -- whether movements cycle back to the beginning/end of buffer. default true
         cyclic = true,
         -- whether the shada file is updated after modifying uppercase marks. default false
-        force_write_shada = false,
+        force_write_shada = true,
         -- how often (in ms) to redraw signs/recompute mark positions.
         -- higher values will have better performance but may cause visual lag,
         -- while lower values may cause performance penalties. default 150.
@@ -49,9 +49,9 @@ return {
       }
     end,
   },
-  { lazy = false,        "phaazon/hop.nvim",    config = function() require("hop").setup() end },
+  { lazy = false, "phaazon/hop.nvim", config = function() require("hop").setup() end },
   { "zefei/vim-wintabs", lazy = false },
-  { lazy = false,        "tiagovla/scope.nvim", config = function() require("scope").setup() end },
+  { lazy = false, "tiagovla/scope.nvim", config = function() require("scope").setup() end },
   {
     "gorbit99/codewindow.nvim",
     lazy = false,
@@ -61,5 +61,5 @@ return {
     end,
   },
   { "github/copilot.vim", lazy = false },
-  { lazy = false,         "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
+  { lazy = false, "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
 }
