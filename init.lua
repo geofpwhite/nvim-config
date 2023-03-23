@@ -102,10 +102,17 @@ return {
     vim.cmd ":highlight @variable guifg=lightblue"
     vim.cmd ":highlight @attribute guifg=#56b6c2"
     vim.cmd ":highlight @function guifg=#e5c07b"
+    vim.cmd ":highlight @field guifg=lightblue"
     vim.cmd ":highlight CursorLine guibg=Black"
     vim.cmd ":highlight CursorLineNC guibg=#1e222a"
     vim.cmd ":highlight NeoTreeCursorLine guibg=Black"
     vim.cmd ":highlight AerialLine guibg=Black"
+    vim.cmd ":highlight Identifier guifg=pink"
+    vim.cmd ":highlight NormalNC guibg=#0e0e0e"
+    vim.cmd ":highlight NeoTreeNormalNC guibg=#0e0e0e"
+    -- vim.cmd ":highlight Normal guibg=#191919"
+    -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
+
     local status = require "astronvim.utils.status"
     require("heirline").setup {
       statuscolumn = {
