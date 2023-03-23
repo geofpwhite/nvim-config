@@ -56,7 +56,9 @@ return {
     "gorbit99/codewindow.nvim",
     lazy = false,
     config = function()
-      require("codewindow").setup()
+      require("codewindow").setup {
+        exclude_filetypes = { "aerial", "neo-tree", "none" },
+      }
       require("codewindow").apply_default_keybinds()
     end,
   },
