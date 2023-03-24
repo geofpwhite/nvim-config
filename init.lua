@@ -108,8 +108,11 @@ return {
     vim.cmd ":highlight NeoTreeCursorLine guibg=Black"
     vim.cmd ":highlight AerialLine guibg=Black"
     vim.cmd ":highlight Identifier guifg=pink"
-    vim.cmd ":highlight NormalNC guibg=#0e0e0e"
-    vim.cmd ":highlight NeoTreeNormalNC guibg=#0e0e0e"
+    vim.cmd ":highlight Normal guibg=#1e1e1e"
+    vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
+    vim.cmd ":highlight NormalNC guibg=#191919"
+    vim.cmd ":highlight NeoTreeNormalNC guibg=#191919"
+    vim.cmd ":highlight DiagnosticInfo guifg=grey"
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
 
