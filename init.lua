@@ -113,6 +113,7 @@ return {
     vim.cmd ":highlight NormalNC guibg=#191919"
     vim.cmd ":highlight NeoTreeNormalNC guibg=#191919"
     vim.cmd ":highlight DiagnosticInfo guifg=grey"
+    vim.cmd ":highlight DiagnosticInfo guifg=orange"
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
 
