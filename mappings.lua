@@ -23,6 +23,7 @@ return {
     ["<leader>bd"] = { "<cmd>WintabsClose<cr>" },
     ["<leader>Q"] = { ":qa!<cr>" },
     ["<leader>gP"]= {":tabe ~/documents/ufc_flutter_django/ufc_flutter_django/FighterSearch/src/app/app.component.ts<cr>:tabe ~/documents/ufc_flutter_django/ufc_flutter_django/djangoUFCbackend<cr>",desc="open ufc project"},
+    ["<leader>e"]={"<cmd>Neotree current left toggle<cr>"},
     ["<leader>bD"] = {
 
       function()
