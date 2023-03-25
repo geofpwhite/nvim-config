@@ -5,6 +5,9 @@
 -- automatically pick-up stored data by this setting.)
 return {
   -- first key is the mode
+  v = {
+    ["="] = { "c<C-r>=<C-r>\"<Esc>jk" }
+  },
   i = {
     ["<C-Enter>"] = { "<Esc>o" },
   },
@@ -22,8 +25,10 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bd"] = { "<cmd>WintabsClose<cr>" },
     ["<leader>Q"] = { ":qa!<cr>" },
-    ["<leader>gP"]= {":tabe ~/documents/ufc_flutter_django/ufc_flutter_django/FighterSearch/src/app/app.component.ts<cr>:tabe ~/documents/ufc_flutter_django/ufc_flutter_django/djangoUFCbackend<cr>",desc="open ufc project"},
-    ["<leader>e"]={"<cmd>Neotree current left toggle<cr>"},
+    ["<leader>gP"] = {
+      ":tabe ~/documents/ufc_flutter_django/ufc_flutter_django/FighterSearch/src/app/app.component.ts<cr>:tabe ~/documents/ufc_flutter_django/ufc_flutter_django/djangoUFCbackend<cr>", desc =
+    "open ufc project" },
+    ["<leader>e"] = { "<cmd>Neotree current left toggle<cr>" },
     ["<leader>bD"] = {
 
       function()

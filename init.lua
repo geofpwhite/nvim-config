@@ -121,7 +121,6 @@ return {
     vim.cmd ":highlight TelescopePreviewBorder guifg=#1e1e1e"
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
-
     local status = require "astronvim.utils.status"
     require("heirline").setup {
       statuscolumn = {
