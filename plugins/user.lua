@@ -9,7 +9,7 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-
+  {"jremmen/vim-ripgrep",lazy=false, },
   { "tpope/vim-unimpaired", lazy = false },
   { "tpope/vim-surround", lazy = false },
   { "tpope/vim-repeat", lazy = false },
