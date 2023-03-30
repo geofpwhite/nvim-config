@@ -8,7 +8,8 @@ return {
     signcolumn = "auto:1-3", -- sets vim.opt.signcolumn to auto
     wrap = false,            -- sets vim.opt.wrap
     autochdir = true,
-    foldcolumn = "auto:4",
+    foldcolumn = "auto:1",
+    scrolloff = 0,
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
@@ -18,6 +19,7 @@ return {
     diagnostics_mode = 3,            -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+    copilot_no_tab_map = true
   },
 }
 -- If you need more control, you can use the function()...end notation

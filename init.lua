@@ -121,6 +121,8 @@ return {
     vim.cmd ":highlight TelescopePromptBorder guifg=#1e1e1e"
     vim.cmd ":highlight TelescopeResultsBorder guifg=#1e1e1e"
     vim.cmd ":highlight TelescopePreviewBorder guifg=#1e1e1e"
+    vim.cmd ":imap <silent><script><expr> <S-Enter> copilot#Accept(\"<CR>\")"
+
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
     local status = require "astronvim.utils.status"
@@ -135,6 +137,28 @@ return {
         } or nil,
       },
     }
+    -- cmp.setup {
+    --   mapping = {
+    --     ["<Tab>"] = cmp.mapping(function(fallback)
+    --       if cmp.visible() then
+    --         cmp.select_next_item()
+    --       elseif luasnip.expand_or_jumpable() then
+    --         luasnip.expand_or_jump()
+    --       elseif cmp.has_words_before() then
+    --         cmp.complete()
+    --       else
+    --         vim.cmd("copilot#Accept()")
+    --       end
+    --     end, { "i", "s" }),
+    --     ['<C-s>'] = cmp.mapping.complete({
+    --       config = {
+    --         sources = {
+    --           { name = 'vsnip' }
+    --         }
+    --       }
+    --     })
+    --   }
+    -- }
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
