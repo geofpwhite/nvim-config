@@ -101,7 +101,7 @@ return {
     vim.cmd ":vmap s S"
     vim.cmd ":highlight @variable guifg=lightblue"
     vim.cmd ":highlight @attribute guifg=#56b6c2"
-    vim.cmd ":highlight @function guifg=#e5c07b"
+    vim.cmd ":highlight @function guifg=#dcccab"
     vim.cmd ":highlight @property guifg=lightblue"
     vim.cmd ":highlight @field guifg=lightblue"
     vim.cmd ":highlight CursorLine guibg=Black"
