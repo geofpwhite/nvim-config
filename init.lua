@@ -1,5 +1,40 @@
 return {
   -- Configure AstroNvim updates
+  --
+  dap = {
+    adapters = {
+      python = {
+        type = "executable",
+        command = "env/debugpy/bin/python",
+        args = { "-m", "debugpy.adapter" },
+      },
+    },
+    configurations = {
+      python = {
+        {
+          -- The first three options are required by nvim-dap
+          type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+          request = "launch",
+          name = "Launch file",
+          -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+
+          program = "${file}", -- This configuration will launch the current file if used.
+          pythonPath = function()
+            -- -- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
+            -- -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
+            -- -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
+            -- local cwd = vim.fn.getcwd()
+            -- if vim.fn.executable(cwd .. "/env/bin/python3") == 1 then
+            --   return cwd .. "/env/bin/python3"
+            -- else
+            --   return "/usr/bin/python3"
+            -- end
+            return "/opt/homebrew/bin/python3"
+          end,
+        },
+      },
+    },
+  },
   highlights = {
     -- set highlights for all themes
     -- use a function override to let us use lua to retrieve colors from highlight group
@@ -7,6 +42,7 @@ return {
     init = function()
       local get_hlgroup = require("astronvim.utils").get_hlgroup
       -- get highlights from highlight groups
+      --
       local normal = get_hlgroup "Normal"
       local fg, bg = normal.fg, normal.bg
       local bg_alt = bg
@@ -26,6 +62,7 @@ return {
         TelescopeResultsBorder = { fg = bg, bg = bg },
         TelescopeResultsNormal = { bg = bg },
         TelescopeResultsTitle = { fg = bg, bg = bg },
+        CodewindowUnderline = { sp = bg }
       }
     end,
   },
@@ -96,6 +133,7 @@ return {
     vim.keymap.set("n", "<leader>j", ":ToggleTerm direction=horizontal<cr>")
     vim.keymap.set("n", "<Tab>", "<C-w>w")
     vim.keymap.set("n", "<S-Tab>", "<C-w>W")
+    vim.g.ui_notifications_enabled = true
     vim.cmd "hi CodewindowBorder guifg=#1e222a guibg=#1e222a<cr>"
     vim.cmd ":nmap s ysiw"
     vim.cmd ":vmap s S"
@@ -121,7 +159,10 @@ return {
     vim.cmd ":highlight TelescopePromptBorder guifg=#1e1e1e"
     vim.cmd ":highlight TelescopeResultsBorder guifg=#1e1e1e"
     vim.cmd ":highlight TelescopePreviewBorder guifg=#1e1e1e"
+    vim.cmd ":highlight CodewindowUnderline guifg=#1e1e1e gui=none"
+    vim.cmd ":highlight CursorLineNr guifg=lightpink gui=none"
     vim.cmd ":imap <silent><script><expr> <S-Enter> copilot#Accept(\"<CR>\")"
+    vim.cmd ":let g:python3_host_prog='/opt/homebrew/Cellar/python@3.11/3.11.2_1/bin/python3'"
 
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
