@@ -8,6 +8,8 @@ return {
     signcolumn = "auto:1-3", -- sets vim.opt.signcolumn to auto
     wrap = false,            -- sets vim.opt.wrap
     autochdir = true,
+    autochdir,
+    acd = true,
     foldcolumn = "auto:1",
     scrolloff = 0,
   },

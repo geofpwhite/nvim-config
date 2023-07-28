@@ -24,11 +24,12 @@ return {
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bd"] = { "<cmd>WintabsClose<cr>" },
+    ["<leader>E"] = { "<cmd>Neotree current float<cr>" },
     ["<leader>Q"] = { ":qa!<cr>" },
     ["<leader>gP"] = {
       ":tabe ~/documents/ufc_flutter_django/ufc_flutter_django/FighterSearch/src/app/app.component.ts<cr>:tabe ~/documents/ufc_flutter_django/ufc_flutter_django/djangoUFCbackend<cr>", desc =
     "open ufc project" },
-    ["<leader>e"] = { "<cmd>Neotree current left toggle<cr>" },
+    ["<leader>e"] = { "<cmd>Neotree current left toggle filesystem<cr>" },
     ["<leader>bD"] = {
 
       function()

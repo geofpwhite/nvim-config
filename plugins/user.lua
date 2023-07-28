@@ -62,12 +62,13 @@ return {
       require("codewindow").apply_default_keybinds()
     end,
   },
-  { "github/copilot.vim",        lazy = false },
-  { lazy = false,                "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
-  { "navarasu/onedark.nvim",     lazy = false },
-  { "martinsione/darkplus.nvim", lazy = false },
-  { "Mofiqul/vscode.nvim",       lazy = false },
-  { "askfiy/visual_studio_code", lazy = false },
+  { "github/copilot.vim",         lazy = false },
+  { lazy = false,                 "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
+  { "navarasu/onedark.nvim",      lazy = false },
+  { "martinsione/darkplus.nvim",  lazy = false },
+  { "Mofiqul/vscode.nvim",        lazy = false },
+  { "askfiy/visual_studio_code",  lazy = false },
+  { "maxmx03/fluoromachine.nvim", lazy = false },
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
