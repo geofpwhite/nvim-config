@@ -19,10 +19,16 @@ return {
     ["L"] = { ":bn<cr>" },
     ["f"] = { "<cmd>HopWordMW<cr>" },
     ["gr"] = { function() vim.lsp.buf.references() end },
+    ["<leader>lps"]= {"<cmd>lua _bpytop_toggle()<cr>"},
     ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr>" },
     -- ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
+    ["<leader>O"] = { "<cmd>AerialNavToggle<cr>", desc = "symbol goto" },
+
+    ["<leader>|"] = { "<cmd>vsplit | Telescope buffers <cr>" },
+    -- ["<leader><S-|>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+
     ["<leader>bd"] = { "<cmd>WintabsClose<cr>" },
     ["<leader>E"] = { "<cmd>Neotree current float<cr>" },
     ["<leader>Q"] = { ":qa!<cr>" },

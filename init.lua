@@ -127,13 +127,13 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    vim.keymap.set("n", "<leader>\\", ":split | Telescope buffers<cr>")
-    vim.keymap.set("n", "<leader>|", ":vsplit| Telescope buffers<cr>")
+    vim.keymap.set("n", "<leader>\\", " :split | lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr> ")
+    vim.keymap.set("n", "<leader>|", ":vsplit| lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr> ")
     vim.keymap.set("n", "gR", ":lua vim.lsp.buf.references()<cr>")
     vim.keymap.set("n", "<leader>j", ":ToggleTerm direction=horizontal<cr>")
     vim.keymap.set("n", "<Tab>", "<C-w>w")
     vim.keymap.set("n", "<S-Tab>", "<C-w>W")
-    vim.g.ui_notifications_enabled = true
+    vim.g.ui_notifications_enabled = false
     vim.cmd "hi CodewindowBorder guifg=#1e222a guibg=#1e222a<cr>"
     vim.cmd ":nmap s ysiw"
     vim.cmd ":nmap <S-Space> za"
@@ -170,6 +170,11 @@ return {
     vim.cmd ":nmap <S-space> za"
     vim.cmd ":let g:copilot_enabled=0"
     vim.cmd ":hi DapUIVariable guifg=white"
+    local Terminal  = require('toggleterm.terminal').Terminal
+    local bpytop = Terminal:new({ cmd = "bpytop", hidden = true })
+    function _bpytop_toggle()
+      bpytop:toggle()
+    end
 
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
