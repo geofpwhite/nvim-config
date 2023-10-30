@@ -8,7 +8,6 @@ return {
     signcolumn = "auto:1-3", -- sets vim.opt.signcolumn to auto
     wrap = false,            -- sets vim.opt.wrap
     autochdir = true,
-    autochdir,
     acd = true,
     foldcolumn = "auto:1",
     scrolloff = 0,
@@ -23,6 +22,7 @@ return {
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     copilot_no_tab_map = true
   },
+
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)

@@ -13,7 +13,6 @@ return {
   { "tpope/vim-unimpaired", lazy = false },
   { "tpope/vim-surround",   lazy = false },
   { "tpope/vim-repeat",     lazy = false },
-  { "github/copilot.vim",   lazy = false },
   {
     lazy = false,
     "chentoast/marks.nvim",
@@ -62,10 +61,10 @@ return {
       require("codewindow").apply_default_keybinds()
     end,
   },
-  { "github/copilot.vim",         lazy = false },
   { lazy = false,                 "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
   { "navarasu/onedark.nvim",      lazy = false },
   { "martinsione/darkplus.nvim",  lazy = false },
+  {"petertriho/nvim-scrollbar", lazy = false},
   { "Mofiqul/vscode.nvim",        lazy = false },
   { "askfiy/visual_studio_code",  lazy = false },
   { "maxmx03/fluoromachine.nvim", lazy = false },

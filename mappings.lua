@@ -14,18 +14,18 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    [";"] = { ":" },
     ["H"] = { ":bp<cr>" },
     ["L"] = { ":bn<cr>" },
+    ["<leader>bf"]={ function() require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false }) end},
     ["f"] = { "<cmd>HopWordMW<cr>" },
     ["gr"] = { function() vim.lsp.buf.references() end },
-    ["<leader>lps"]= {"<cmd>lua _bpytop_toggle()<cr>"},
-    ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr>" },
+    ["<leader>lp"]= {"<cmd>lua _bpytop_toggle()<cr>"},
+    ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr><Esc>" },
     -- ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
     ["<leader>O"] = { "<cmd>AerialNavToggle<cr>", desc = "symbol goto" },
 
-    ["<leader>|"] = { "<cmd>vsplit | Telescope buffers <cr>" },
+    ["<leader>|"] = { "<cmd>vsplit | Telescope buffers <cr><Esc>" },
     -- ["<leader><S-|>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
 
