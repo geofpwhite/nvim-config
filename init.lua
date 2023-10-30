@@ -8,6 +8,7 @@ return {
         command = "env/debugpy/bin/python",
         args = { "-m", "debugpy.adapter" },
       },
+      
     },
     configurations = {
       python = {
@@ -33,6 +34,7 @@ return {
           end,
         },
       },
+
     },
   },
   highlights = {
@@ -150,7 +152,7 @@ return {
     vim.cmd ":highlight NeoTreeCursorLine guibg=Black"
     vim.cmd ":highlight AerialLine guibg=Black"
     vim.cmd ":highlight Identifier guifg=pink"
-    vim.cmd ":highlight Normal guibg=#1e1e1e"
+    vim.cmd ":highlight Normal guibg=#1e1e1e guifg=white"
     vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
     vim.cmd ":highlight NormalNC guibg=#191919"
     vim.cmd ":highlight NeoTreeNormalNC guibg=#191919"
@@ -190,6 +192,12 @@ return {
         } or nil,
       },
     }
+
+    require("scrollbar").setup{
+          excluded_filetypes = { "aerial", "neo-tree", "none" },
+          excluded_buftypes = { "terminal"}
+    } 
+    require("scrollbar.handlers.gitsigns").setup()
     -- cmp.setup {
     --   mapping = {
     --     ["<Tab>"] = cmp.mapping(function(fallback)
