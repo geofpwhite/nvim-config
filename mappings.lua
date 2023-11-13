@@ -19,6 +19,7 @@ return {
     ["<leader>bf"]={ function() require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false }) end},
     ["f"] = { "<cmd>HopWordMW<cr>" },
     ["gr"] = { function() vim.lsp.buf.references() end },
+    ["<leader>gd"] = {"<cmd>Detour<cr> <cmd> lua vim.lsp.buf.definition() <cr> <cmd> hor res 20<cr>"},
     ["<leader>lp"]= {"<cmd>lua _bpytop_toggle()<cr>"},
     ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr><Esc>" },
     -- ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },

@@ -82,4 +82,7 @@ return {
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
+  {"RishabhRD/nvim-qf", lazy = false},
+  {"carbon-steel/detour.nvim", lazy = false}
+  
 }
