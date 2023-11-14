@@ -17,6 +17,7 @@ return {
     ["H"] = { ":bp<cr>" },
     ["L"] = { ":bn<cr>" },
     ["<leader>bf"]={ function() require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false }) end},
+    ["<leader>td"]= {"<cmd> Detour <cr>", desc="Open Popup Window"},
     ["f"] = { "<cmd>HopWordMW<cr>" },
     ["gr"] = { function() vim.lsp.buf.references() end },
     ["<leader>gd"] = {"<cmd>Detour<cr> <cmd> lua vim.lsp.buf.definition() <cr> <cmd> hor res 20<cr>"},
