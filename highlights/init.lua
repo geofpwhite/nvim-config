@@ -4,4 +4,5 @@ return { -- this table overrides highlights in all themes
   TelescopeResultsBorder = { fg="aqua"},
   TelescopePreviewBorder = { fg="aqua"},
   TelescopePromptBorder = { fg="aqua"},
+  Function = { fg ="#dcccab"}
 }
