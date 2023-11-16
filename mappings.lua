@@ -6,20 +6,23 @@
 return {
   -- first key is the mode
   v = {
-    ["="] = { "c<C-r>=<C-r>\"<Esc>jk" }
+    ["="] = { 'c<C-r>=<C-r>"<Esc>jk' },
   },
   i = {
     ["<C-Enter>"] = { "<Esc>o" },
   },
   n = {
+    ["<C-k>"] = { "<C-u>" },
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     ["H"] = { ":bp<cr>" },
     ["L"] = { ":bn<cr>" },
-    ["<leader>bf"]={ function() require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false }) end},
+    ["<leader>bf"] = {
+      function() require("telescope.builtin").buffers(require("telescope.themes").get_dropdown { previewer = false }) end,
+    },
     ["f"] = { "<cmd>HopWordMW<cr>" },
     ["gr"] = { function() vim.lsp.buf.references() end },
-    ["<leader>lp"]= {"<cmd>lua _bpytop_toggle()<cr>"},
+    ["<leader>lp"] = { "<cmd>lua _bpytop_toggle()<cr>" },
     ["<leader>\\"] = { "<cmd>split | Telescope buffers <cr><Esc>" },
     -- ["<leader><S-\\>"] = { "<cmd>vsplit | Telescope buffers <cr>" },
     ["<leader>o"] = { "<cmd>AerialToggle<cr>", desc = "symbol outline" },
@@ -33,8 +36,9 @@ return {
     ["<leader>E"] = { "<cmd>Neotree current float<cr>" },
     ["<leader>Q"] = { ":qa!<cr>" },
     ["<leader>gP"] = {
-      ":tabe ~/documents/ufc_flutter_django/ufc_flutter_django/FighterSearch/src/app/app.component.ts<cr>:tabe ~/documents/ufc_flutter_django/ufc_flutter_django/djangoUFCbackend<cr>", desc =
-    "open ufc project" },
+      ":tabe ~/documents/ufc_flutter_django/ufc_flutter_django/FighterSearch/src/app/app.component.ts<cr>:tabe ~/documents/ufc_flutter_django/ufc_flutter_django/djangoUFCbackend<cr>",
+      desc = "open ufc project",
+    },
     ["<leader>e"] = { "<cmd>Neotree current left toggle filesystem<cr>" },
     ["<leader>bD"] = {
 

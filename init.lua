@@ -8,7 +8,6 @@ return {
         command = "env/debugpy/bin/python",
         args = { "-m", "debugpy.adapter" },
       },
-      
     },
     configurations = {
       python = {
@@ -30,11 +29,10 @@ return {
             -- else
             --   return "/usr/bin/python3"
             -- end
-            return "/opt/homebrew/bin/python3"
+            return "C:\\Users\\geof\\scoop\\apps\\python\\current\\python3.exe"
           end,
         },
       },
-
     },
   },
   highlights = {
@@ -64,21 +62,21 @@ return {
         TelescopeResultsBorder = { fg = bg, bg = bg },
         TelescopeResultsNormal = { bg = bg },
         TelescopeResultsTitle = { fg = bg, bg = bg },
-        CodewindowUnderline = { sp = bg }
+        CodewindowUnderline = { sp = bg },
       }
     end,
   },
   updater = {
-    remote = "origin",     -- remote to use
-    channel = "stable",    -- "stable" or "nightly"
-    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "nightly",    -- branch name (NIGHTLY ONLY)
-    commit = nil,          -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false,  -- skip prompts about breaking changes
+    remote = "origin", -- remote to use
+    channel = "stable", -- "stable" or "nightly"
+    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "nightly", -- branch name (NIGHTLY ONLY)
+    commit = nil, -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false, -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_quit = false,     -- automatically quit the current session after a successful update
-    remotes = {            -- easily add new remotes to track
+    auto_quit = false, -- automatically quit the current session after a successful update
+    remotes = { -- easily add new remotes to track
       --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
       --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
@@ -88,7 +86,7 @@ return {
   colorscheme = "astrodark",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
-    virtual_text = true,
+    virtual_text = false,
     underline = true,
   },
   lsp = {
@@ -96,7 +94,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -129,8 +127,16 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    vim.keymap.set("n", "<leader>\\", " :split | lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr> ")
-    vim.keymap.set("n", "<leader>|", ":vsplit| lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr> ")
+    vim.keymap.set(
+      "n",
+      "<leader>\\",
+      " :split | lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr> "
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>|",
+      ":vsplit| lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{ previewer = false })<cr> "
+    )
     vim.keymap.set("n", "gR", ":lua vim.lsp.buf.references()<cr>")
     vim.keymap.set("n", "<leader>j", ":ToggleTerm direction=horizontal<cr>")
     vim.keymap.set("n", "<Tab>", "<C-w>w")
@@ -166,17 +172,15 @@ return {
     vim.cmd ":highlight TelescopePreviewBorder guifg=#1e1e1e"
     vim.cmd ":highlight CodewindowUnderline guifg=#1e1e1e gui=none"
     vim.cmd ":highlight CursorLineNr guifg=lightpink gui=none"
-    vim.cmd ":imap <silent><script><expr> <S-Enter> copilot#Accept(\"<CR>\")"
+    vim.cmd ':imap <silent><script><expr> <S-Enter> copilot#Accept("<CR>")'
     vim.cmd ":let g:python3_host_prog='/opt/homebrew/Cellar/python@3.11/3.11.2_1/bin/python3'"
     vim.cmd ":set autochdir"
     vim.cmd ":nmap <S-space> za"
     vim.cmd ":let g:copilot_enabled=0"
     vim.cmd ":hi DapUIVariable guifg=white"
-    local Terminal  = require('toggleterm.terminal').Terminal
-    local bpytop = Terminal:new({ cmd = "bpytop", hidden = true })
-    function _bpytop_toggle()
-      bpytop:toggle()
-    end
+    local Terminal = require("toggleterm.terminal").Terminal
+    local bpytop = Terminal:new { cmd = "bpytop", hidden = true }
+    function _bpytop_toggle() bpytop:toggle() end
 
     -- vim.cmd ":highlight Normal guibg=#191919"
     -- vim.cmd ":highlight NeoTreeNormal guibg=#1e1e1e"
@@ -193,10 +197,10 @@ return {
       },
     }
 
-    require("scrollbar").setup{
-          excluded_filetypes = { "aerial", "neo-tree", "none" },
-          excluded_buftypes = { "terminal"}
-    } 
+    require("scrollbar").setup {
+      excluded_filetypes = { "aerial", "neo-tree", "none" },
+      excluded_buftypes = { "terminal" },
+    }
     require("scrollbar.handlers.gitsigns").setup()
     -- cmp.setup {
     --   mapping = {

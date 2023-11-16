@@ -9,10 +9,28 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-  { "jremmen/vim-ripgrep",  lazy = false, },
+  {
+    "karb94/neoscroll.nvim",
+    lazy = false,
+    config = function()
+      require("neoscroll").setup {
+        -- All these keys will be mapped to their corresponding default scrolling animation
+        mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+        hide_cursor = true, -- Hide cursor while scrolling
+        stop_eof = true, -- Stop at <EOF> when scrolling downwards
+        respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        cursor_scrolls_alone = false, -- The cursor will keep on scrolling even if the window cannot scroll further
+        easing_function = nil, -- Default easing function
+        pre_hook = nil, -- Function to run before the scrolling animation starts
+        post_hook = nil, -- Function to run after the scrolling animation ends
+        performance_mode = true, -- Disable "Performance Mode" on all buffers.
+      }
+    end,
+  },
+  { "jremmen/vim-ripgrep", lazy = false },
   { "tpope/vim-unimpaired", lazy = false },
-  { "tpope/vim-surround",   lazy = false },
-  { "tpope/vim-repeat",     lazy = false },
+  { "tpope/vim-surround", lazy = false },
+  { "tpope/vim-repeat", lazy = false },
   {
     lazy = false,
     "chentoast/marks.nvim",
@@ -48,9 +66,9 @@ return {
       }
     end,
   },
-  { lazy = false,        "phaazon/hop.nvim",    config = function() require("hop").setup() end },
+  { lazy = false, "phaazon/hop.nvim", config = function() require("hop").setup() end },
   { "zefei/vim-wintabs", lazy = false },
-  { lazy = false,        "tiagovla/scope.nvim", config = function() require("scope").setup() end },
+  { lazy = false, "tiagovla/scope.nvim", config = function() require("scope").setup() end },
   {
     "gorbit99/codewindow.nvim",
     lazy = false,
@@ -61,12 +79,12 @@ return {
       require("codewindow").apply_default_keybinds()
     end,
   },
-  { lazy = false,                 "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
-  { "navarasu/onedark.nvim",      lazy = false },
-  { "martinsione/darkplus.nvim",  lazy = false },
-  {"petertriho/nvim-scrollbar", lazy = false},
-  { "Mofiqul/vscode.nvim",        lazy = false },
-  { "askfiy/visual_studio_code",  lazy = false },
+  { lazy = false, "kevinhwang91/nvim-bqf", config = function() require("bqf").setup() end },
+  { "navarasu/onedark.nvim", lazy = false },
+  { "martinsione/darkplus.nvim", lazy = false },
+  { "petertriho/nvim-scrollbar", lazy = false },
+  { "Mofiqul/vscode.nvim", lazy = false },
+  { "askfiy/visual_studio_code", lazy = false },
   { "maxmx03/fluoromachine.nvim", lazy = false },
   {
     "ray-x/go.nvim",
@@ -75,11 +93,10 @@ return {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("go").setup()
-    end,
+    config = function() require("go").setup() end,
     event = { "CmdlineEnter" },
-    ft = { "go", 'gomod' },
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
+  { "romainl/vim-qf", lazy = false },
 }
