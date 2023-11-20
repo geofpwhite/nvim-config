@@ -43,51 +43,8 @@ return {
       local get_hlgroup = require("astronvim.utils").get_hlgroup
       -- get highlights from highlight groups
       --
-      local normal = get_hlgroup "Normal"
-      local fg, bg = normal.fg, normal.bg
-      local bg_alt = bg
-      local green = get_hlgroup("String").fg
-      local red = get_hlgroup("Error").fg
       -- return a table of highlights for telescope based on colors gotten from highlight groups
-      return {
-        TelescopeBorder = { fg = bg_alt, bg = bg },
-        TelescopeNormal = { bg = bg },
-        TelescopePreviewBorder = { fg = bg, bg = bg },
-        TelescopePreviewNormal = { bg = bg },
-        TelescopePreviewTitle = { fg = bg, bg = green },
-        TelescopePromptBorder = { fg = bg_alt, bg = bg_alt },
-        TelescopePromptNormal = { fg = fg, bg = bg_alt },
-        TelescopePromptPrefix = { fg = red, bg = bg_alt },
-        TelescopePromptTitle = { fg = bg, bg = red },
-        TelescopeResultsBorder = { fg = bg, bg = bg },
-        TelescopeResultsNormal = { bg = bg },
-        TelescopeResultsTitle = { fg = bg, bg = bg },
-        CodewindowUnderline = { sp = bg },
-        variable = { fg = "lightblue" },
-        Variable = { fg = "lightblue" },
-        attribute = { fg = "#56b6c2" },
-        Attribute = { fg = "#56b6c2" },
-        Function = { fg = "#dcccab" },
-        property = { fg = "lightblue" },
-        Property = { fg = "lightblue" },
-        Field = { fg = "lightblue" },
-        field = { fg = "lightblue" },
-        CursorLine = { bg = "Black" },
-        CursorLineNC = { bg = "#1e222a" },
-        NeoTreeCursorLine = { bg = "Black" },
-        AerialLine = { bg = "Black" },
-        Identifier = { fg = "pink" },
-        identifier = { fg = "pink" },
-        Normal = { bg = "#1e1e1e", fg = "white" },
-        NeoTreeNormal = { bg = "#1e1e1e" },
-        NormalNC = { bg = "#191919" },
-        NeoTreeNormalNC = { bg = "#191919" },
-        DiagnosticInfo = { fg = "orange" },
-        Method = { fg = "#dcdcaa" },
-        Parameter = { fg = "lightblue" },
-        Constructor = { fg = "#e06c75" },
-        CursorLineNr = { fg = "lightpink gui=none" },
-      }
+      return {}
     end,
   },
   updater = {
@@ -176,6 +133,17 @@ return {
     --        TelescopePromptTitle = { fg = bg, bg = red },
     --        TelescopeResultsBorder = { fg = bg, bg = bg },
     --        TelescopeResultsNormal = { bg = bg },
+
+    vim.cmd ":highlight @variable guifg=lightblue"
+    vim.cmd ":highlight @attribute guifg=#56b6c2"
+    vim.cmd ":highlight @function guifg=#dcccab"
+    vim.cmd ":highlight @function guifg=#dcccab"
+    vim.cmd ":highlight @function.builtin guifg=#61afef"
+    vim.cmd ":highlight @property guifg=lightblue"
+    vim.cmd ":highlight @field guifg=lightblue"
+    vim.cmd ":highlight @method guifg=#dcdcaa"
+    vim.cmd ":highlight @parameter guifg=lightblue"
+    vim.cmd ":highlight @constructor guifg=#e06c75"
 
     vim.cmd ":nmap s ysiw"
     vim.cmd ":nmap <S-Space> za"
