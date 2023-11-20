@@ -27,6 +27,9 @@ return {
       }
     end,
   },
+  {
+    "MunifTanjim/nougat.nvim",
+  },
   { "jremmen/vim-ripgrep", lazy = false },
   { "tpope/vim-unimpaired", lazy = false },
   { "tpope/vim-surround", lazy = false },
@@ -67,7 +70,7 @@ return {
     end,
   },
   { lazy = false, "phaazon/hop.nvim", config = function() require("hop").setup() end },
-  { "zefei/vim-wintabs", lazy = false },
+  -- { "zefei/vim-wintabs", lazy = false },
   { lazy = false, "tiagovla/scope.nvim", config = function() require("scope").setup() end },
   {
     "gorbit99/codewindow.nvim",
