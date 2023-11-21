@@ -29,6 +29,7 @@ return {
   },
   {
     "MunifTanjim/nougat.nvim",
+    lazy = false,
   },
   { "jremmen/vim-ripgrep", lazy = false },
   { "tpope/vim-unimpaired", lazy = false },

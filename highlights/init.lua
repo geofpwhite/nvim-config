@@ -27,5 +27,5 @@ return { -- this table overrides highlights in all themes
   Method = { fg = "#dcdcaa" },
   Parameter = { fg = "lightblue" },
   Constructor = { fg = "#e06c75" },
-  CursorLineNr = { fg = "lightpink gui=none" },
+  CursorLineNr = { fg = "lightpink" },
 }
